@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.TicketsPageController"
+            stylesheets="@styles.css"
+            prefHeight="850.0" prefWidth="1000.0">
+    <children>
+        <VBox styleClass="home-panel" layoutX="50.0" layoutY="50.0" prefHeight="750.0" prefWidth="900.0" spacing="20">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <Text styleClass="header-text" text="My Tickets" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="32.0"/>
+                </font>
+            </Text>
+            
+            <Label fx:id="userIdLabel" styleClass="subheader-text" textAlignment="CENTER"/>
+            
+            <TableView fx:id="ticketsTable" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="ticketIdColumn" prefWidth="100.0" text="Ticket ID"/>
+                    <TableColumn fx:id="trainNumberColumn" prefWidth="100.0" text="Train Number"/>
+                    <TableColumn fx:id="fromColumn" prefWidth="150.0" text="From"/>
+                    <TableColumn fx:id="toColumn" prefWidth="150.0" text="To"/>
+                    <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Date"/>
+                    <TableColumn fx:id="timeColumn" prefWidth="150.0" text="Time"/>
+                    <TableColumn fx:id="typeColumn" prefWidth="100.0" text="Type"/>
+                    <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price"/>
+                    <TableColumn fx:id="trainTypeColumn" prefWidth="100.0" text="Train Type"/>
+                    <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status"/>
+                </columns>
+            </TableView>
+            
+            <HBox spacing="20" alignment="CENTER">
+                <children>
+                    <Label text="Change Status:"/>
+                    <ComboBox fx:id="statusComboBox" prefWidth="150.0" promptText="Select Status"/>
+                </children>
+            </HBox>
+            
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="backButton" text="Back to Home" onAction="#onBackButtonClick"/>
+                <Button fx:id="cancelTicketButton" text="Cancel Ticket" onAction="#onCancelTicketClick"/>
+                <Button fx:id="printTicketButton" text="Print Ticket" onAction="#onPrintTicketClick"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane> 

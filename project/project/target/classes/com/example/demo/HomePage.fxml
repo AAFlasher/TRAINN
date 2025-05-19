@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.HomePageController"
+            stylesheets="@styles.css"
+            prefHeight="850.0" prefWidth="1000.0">
+    <children>
+        <VBox styleClass="home-panel" layoutX="50.0" layoutY="50.0" prefHeight="750.0" prefWidth="900.0" spacing="20">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <Text styleClass="header-text" text="Train Booking System" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="32.0"/>
+                </font>
+            </Text>
+
+            <GridPane hgap="20" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+
+                <Label text="From:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="FROM" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="To:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="TO" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <DatePicker fx:id="DatePicker" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+
+            <GridPane hgap="20" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+
+                <Label text="Number of Tickets:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ChoiceBox fx:id="No" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Passenger Type:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ChoiceBox fx:id="Type" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Train Type:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <ChoiceBox fx:id="TrainType" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+
+            <GridPane hgap="20" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+
+                <Label text="Ticket Status:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ChoiceBox fx:id="Status" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            </GridPane>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Label fx:id="pricePerTicketLabel" styleClass="price-label"/>
+                <Label fx:id="totalPriceLabel" styleClass="price-label"/>
+            </HBox>
+
+            <TableView fx:id="trainTable" prefHeight="200.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="trainNumberColumn" prefWidth="150.0" text="Train Number"/>
+                    <TableColumn fx:id="fromColumn" prefWidth="150.0" text="From"/>
+                    <TableColumn fx:id="toColumn" prefWidth="150.0" text="To"/>
+                    <TableColumn fx:id="departureTimeColumn" prefWidth="150.0" text="Departure Time"/>
+                    <TableColumn fx:id="trainTypeColumn" prefWidth="150.0" text="Train Type"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="ShowTicketsBtn" text="Show Tickets" onAction="#onShowTicketsButtonClick"/>
+                <Button fx:id="Payment" text="Proceed to Payment" onAction="#onButtonPayment"/>
+                <Button fx:id="Logout" text="Logout" onAction="#onButtonLogout"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

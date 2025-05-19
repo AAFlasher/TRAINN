@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.SignupPageController"
+            stylesheets="@styles.css"
+            prefHeight="850.0" prefWidth="1000.0">
+    <children>
+        <VBox styleClass="login-panel" layoutX="300.0" layoutY="125.0" prefHeight="600.0" prefWidth="400.0" spacing="20">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <Text styleClass="header-text" text="Create Account" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="32.0"/>
+                </font>
+            </Text>
+
+            <VBox spacing="15">
+                <Label text="Full Name"/>
+                <TextField fx:id="fullNameField" promptText="Enter your full name"/>
+                
+                <Label text="Email"/>
+                <TextField fx:id="emailField" promptText="Enter your email"/>
+                
+                <Label text="Username"/>
+                <TextField fx:id="usernameField" promptText="Choose a username"/>
+                
+                <Label text="Password"/>
+                <PasswordField fx:id="passwordField" promptText="Create a password"/>
+                
+                <Label text="Confirm Password"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password"/>
+                
+                <Label fx:id="statusLabel" styleClass="status-error"/>
+                
+                <Button fx:id="signupButton" text="Create Account" onAction="#onSignupButtonClick" maxWidth="Infinity"/>
+                
+                <HBox alignment="CENTER" spacing="5">
+                    <Label text="Already have an account?"/>
+                    <Hyperlink fx:id="loginLink" text="Login" onAction="#onLoginLinkClick"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane> 

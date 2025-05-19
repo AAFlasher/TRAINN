@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.ConfirmPaymentController"
+            prefHeight="850.0" prefWidth="1000.0">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00366b" height="850.0" stroke="BLACK" strokeType="INSIDE" width="1000.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#83c3ff" height="400.0" layoutX="253.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="495.0"/>
+        
+        <VBox layoutX="287.0" layoutY="265.0" prefHeight="300.0" prefWidth="433.0" spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Successful!" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="30.0"/>
+                </font>
+            </Text>
+            
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you for your purchase!" textAlignment="CENTER">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Text>
+            
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your ticket has been confirmed and will be sent to your email." textAlignment="CENTER" wrappingWidth="400.0">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Text>
+            
+            <Button text="Return to Home" onAction="#onReturnToHomeClick" prefWidth="200.0">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Button>
+        </VBox>
+    </children>
+</AnchorPane>
